@@ -1,4 +1,4 @@
-import { createStore, compose } from 'redux';
+import { createStore } from 'redux';
 import rootReducer from './reducers/index';
 
 import todos from './data/todos';
@@ -9,13 +9,7 @@ const defaultState = {
   visibilityFilter
 };
 
-const enhancers = compose(
-    window.devToolsExtension
-        ? window.devToolsExtension()
-        : (f) => {f}
-);
-
-const store = createStore(rootReducer, defaultState, enhancers);
+const store = createStore(rootReducer, defaultState);
 
 if(module.hot) {
   module.hot.accept('./reducers/',() => {
