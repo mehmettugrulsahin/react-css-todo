@@ -1,0 +1,22 @@
+.todo-list {
+  /*get rif of the bullets*/
+  list-style: none;
+
+  /*get rid of the margin*/
+  margin: 0;
+
+  /*get rid of the padding*/
+  padding: 0;
+
+  /**/
+  width: 100%;
+
+  /*change order in de flex box*/
+  order: -1;
+
+  /**/
+  display: flex;
+
+  /**/
+  flex-direction: column;
+}

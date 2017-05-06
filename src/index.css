@@ -1,17 +1,17 @@
-// refers to the whole html element
+/*refers to the whole html element*/
 :root {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif; // sans-serif is fallback font
   font-weight: 600;
 
-  // shorthand
-  // font: 600 16px 'Open Sans', sans-serif;
+  /*shorthand*/
+  /*font: 600 16px 'Open Sans', sans-serif;*/
 }
 
 body {
   background-color: #bdc3c7;
 
-  // takes away default body margin
+  /*takes away default body margin*/
   margin: 0;
 }
 
@@ -26,41 +26,12 @@ body {
   width: 100%;
 
   /*to center it*/
-  // position: relative;
-  // margin: 0 auto;
+  position: relative;
+  margin: 0 auto;
 
   /*to make everything to go to the bottom*/
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-}
-
-.todo-app {
-  /*light grey color*/
-  background: #ecf0f1;
-
-  /*100% of the parent*/
-  width: 100%;
-
-  /*only top corners*/
-  border-radius: 4px 4px 0 0;
-
-  /*
-  0 0 means we are not shifting it to the left or to the right
-  spread and blur 2px 1px
-  black and with rgba to add opacity at the end rgba(0,0,0,0.1)
-  */
-  box-shadow: 0 0 2px 3px rgba(0,0,0,0.1);
-
-  /*we do not want it to be 100% */
-  max-width: calc(100% - 20px);
-
-  /*to be able to reorder things*/
-  display: flex;
-  /**/
-  flex-direction: column;
-
-  /*align the children*/
-  align-items: center;
 }
