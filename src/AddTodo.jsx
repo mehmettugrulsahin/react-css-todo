@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-let nextTodoId = 0;
-export const addTodo = (text) => {
+export const addTodo = (nextTodoId, text) => {
   return {
     type: 'ADD_TODO',
     id: nextTodoId++,
@@ -10,7 +9,13 @@ export const addTodo = (text) => {
   };
 };
 
-let AddTodo = ({ dispatch }) => {
+const mapStateToAddTodoProps = (state) => {
+  return {
+    todos: state.todos
+  };
+};
+
+let AddTodo = ({ todos, dispatch }) => {
   let input;
 
   return (
@@ -19,7 +24,7 @@ let AddTodo = ({ dispatch }) => {
         input = node;
       }} />
       <button onClick={() => {
-        dispatch(addTodo(input.value));
+        dispatch(addTodo(todos.length, input.value));
         input.value = '';
       }}>
         Add Todo
@@ -27,6 +32,6 @@ let AddTodo = ({ dispatch }) => {
     </div>
   );
 };
-AddTodo = connect()(AddTodo);
+AddTodo = connect(mapStateToAddTodoProps)(AddTodo);
 
 export default AddTodo;

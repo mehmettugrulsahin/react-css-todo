@@ -33,7 +33,8 @@ const mapStateToTodoListProps = (state) => {
     todos: getVisibleTodos(
       state.todos,
       state.visibilityFilter
-    )
+    ),
+    visibilityFilter: state.visibilityFilter
   };
 };
 
