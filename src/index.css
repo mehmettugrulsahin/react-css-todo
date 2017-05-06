@@ -1,0 +1,37 @@
+// refers to the whole html element
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif; // sans-serif is fallback font
+  font-weight: 600;
+
+  // shorthand
+  // font: 600 16px 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #bdc3c7;
+
+  // takes away default body margin
+  margin: 0;
+}
+
+.container {
+  /*size of the screen*/
+  min-height: 100vh;
+
+  /*it does not get beyond 730 px*/
+  max-width: 730px;
+
+  /*use as much space as possible*/
+  width: 100%;
+
+  /*to center it*/
+  // position: relative;
+  // margin: 0 auto;
+
+  /*to make everything to go to the bottom*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
