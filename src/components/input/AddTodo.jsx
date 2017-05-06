@@ -26,7 +26,7 @@ let AddTodo = ({ todos, dispatch }) => {
         className="add-todo__input"
         placeholder="new todo"
         onKeyUp={(e) => {
-          if (e.keyCode == 13) {
+          if (e.keyCode === 13) {
             dispatch(addTodo(todos.length, input.value));
             input.value = '';
           }
