@@ -1,3 +1,4 @@
+import './AddTodo.css';
 import React from 'react';
 import {connect} from 'react-redux';
 
@@ -19,14 +20,22 @@ let AddTodo = ({ todos, dispatch }) => {
   let input;
 
   return (
-    <div>
-      <input ref={node => {
-        input = node;
-      }} />
+    <div className="add-todo">
+      <input
+        ref={node => { input = node; }}
+        className="add-todo__input"
+        placeholder="new todo"
+        onKeyUp={(e) => {
+          if (e.keyCode == 13) {
+            dispatch(addTodo(todos.length, input.value));
+            input.value = '';
+          }
+        }}
+      />
       <button onClick={() => {
         dispatch(addTodo(todos.length, input.value));
         input.value = '';
-      }}>
+      }} className="add-todo__button">
         Add Todo
       </button>
     </div>
