@@ -21,6 +21,22 @@
   flex-direction: column-reverse;
 }
 
+.todo-transition-enter {
+  height: 0;
+}
+
+.todo-transition-enter.todo-transition-enter-active {
+  height: 80px;
+  transition: height 100ms ease-in;
+}
+.todo-transition-leave {
+  height: 80px;
+}
+.todo-transition-leave.todo-transition-leave-active {
+  height: 0;
+  transition: height 100ms ease-in;
+}
+
 @media only screen and (min-width: 730px) {
   .todo-list {
     /*change order in de flex box*/
