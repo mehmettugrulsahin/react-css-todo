@@ -34,3 +34,66 @@ that these are interactive
 .filter__radio:checked + [class^="filter__label"] {
   color: #fff;
 }
+
+/*
+all of the filter label will have one circle except 'all'
+which is will have two circles so there will be an css pseudo element after on that one
+*/
+[class^="filter__label"]::before,
+.filter__label--all::after {
+  content: '';
+
+  /*position them relative to the parent*/
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background: #647380;
+
+  /*so that they can have a width and a height*/
+  display: block;
+
+  /*shapes of the icons*/
+  /*circle with 10px high 10 px wide with 5px border radius */
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+
+  /*give some seperation and pop off from the background a little bit*/
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.2);
+}
+
+.filter__radio {
+  /*
+   remove it from the layout flow so the rest of the elements
+   will act like they are not there
+  */
+  position: absolute;
+
+  /*make it invisible*/
+  opacity: 0;
+}
+
+/*label all needs a little bit of space for its icon*/
+.filter__label--all {
+  padding-left: 21px;
+}
+
+/*shift the after a few more pixels to be able to see it*/
+.filter__label--all::after {
+  left: 5px;
+}
+
+.filter__radio:checked + .filter__label--all::before {
+  background: #af544f;
+}
+.filter__radio:checked + .filter__label--all::after {
+  background: #16a085;
+}
+
+.filter__radio:checked + .filter__label--active::before {
+  background: #af544f;
+}
+
+.filter__radio:checked + .filter__label--completed::before {
+  background: #16a085;
+}
