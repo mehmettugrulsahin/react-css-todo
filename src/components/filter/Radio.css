@@ -1,0 +1,36 @@
+.filter {
+  /*interactive element, easier to tell with cursor set to pointer*/
+  cursor: pointer;
+}
+
+/*RegEx like expression to target filter__label*/
+[class^="filter__label"] {
+  /*so that we can position their children absolutely relative to each individual filter*/
+  position: relative;
+
+  /*not really necessary, but it will work*/
+  display: inline-block;
+
+  /*a little bit of room for icons on the side of each filter*/
+  padding-left: 16px;
+
+  /*set the color to differentiate them from the actual title*/
+  color: rgba(236,240,241,0.3);
+}
+
+/*
+a bit of higer contract helps cummunicate when hovered over them
+that these are interactive
+*/
+[class^="filter__label"]:hover {
+  color: #ccc;
+}
+
+/*
+ sibling selector, when radio is checked to change the actual filter label,
+ color will be set to full white
+ which will provide lots of contrast
+ */
+.filter__radio:checked + [class^="filter__label"] {
+  color: #fff;
+}

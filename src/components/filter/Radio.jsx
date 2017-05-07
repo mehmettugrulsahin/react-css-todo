@@ -1,3 +1,4 @@
+import './Radio.css';
 import React from 'react';
 
 const Radio = ({active, children, onChange }) => {

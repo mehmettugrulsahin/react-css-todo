@@ -1,0 +1,35 @@
+.filters {
+  height: 80px;
+  width: calc(100% + 20px);
+
+  /*lets change the padding without changing the total height*/
+  box-sizing: border-box;
+
+  /*paddings allows the content inside aligned in the correct place*/
+  padding: 32px 35px 0;
+
+  background: #2c3e50;
+  color: #ecf0f1;
+
+  /*makes the font a little bit bolder and easier to see on the dark background*/
+  font-weight: 700;
+
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.2);
+  border-radius: 3px 3px 0 0;
+
+  /*gets rid of the border*/
+  border: none;
+}
+
+.filters__title, .filter {
+  /*could have been done with flexbox, but it works just as well with a little bit less code*/
+  display: inline-block;
+
+  /*spaces between items*/
+  margin-right: 30px;
+}
+
+.filters__title {
+  float:left;
+}
+
