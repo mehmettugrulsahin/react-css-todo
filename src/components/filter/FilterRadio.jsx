@@ -1,4 +1,4 @@
-import Link from './Link';
+import Radio from './Radio';
 import {connect} from 'react-redux';
 
 const setVisibilityFilter = (filter) => {
@@ -8,7 +8,7 @@ const setVisibilityFilter = (filter) => {
   };
 };
 
-const mapStateToLinkProps = (
+const mapStateToRadioProps = (
   state,
   ownProps
 ) => {
@@ -18,21 +18,21 @@ const mapStateToLinkProps = (
       state.visibilityFilter
   };
 };
-const mapDispatchToLinkProps = (
+const mapDispatchToRadioProps = (
   dispatch,
   ownProps
 ) => {
   return {
-    onClick: () => {
+    onChange: () => {
       dispatch(
         setVisibilityFilter(ownProps.filter)
       );
     }
   };
 }
-const FilterLink = connect(
-  mapStateToLinkProps,
-  mapDispatchToLinkProps
-)(Link);
+const FilterRadio = connect(
+  mapStateToRadioProps,
+  mapDispatchToRadioProps
+)(Radio);
 
-export default FilterLink;
+export default FilterRadio;

@@ -1,22 +1,21 @@
 import React from 'react';
-import FilterLink from './FilterLink';
+import FilterRadio from './FilterRadio';
 
 const Footer = () => (
-  <p>
-    Show:
-    {' '}
-    <FilterLink filter='SHOW_ALL'>
+  <fieldset className="filters">
+    {/* legend groups related elements in a a form */}
+    <legend className="filters__title">Show:</legend>
+    <FilterRadio filter='SHOW_ALL'>
       All
-    </FilterLink>
-    {', '}
-    <FilterLink filter='SHOW_ACTIVE'>
+    </FilterRadio>
+    <FilterRadio filter='SHOW_ACTIVE'>
       Active
-    </FilterLink>
-    {', '}
-    <FilterLink filter='SHOW_COMPLETED'>
+    </FilterRadio>
+    <FilterRadio filter='SHOW_COMPLETED'>
       Completed
-    </FilterLink>
-  </p>
+    </FilterRadio>
+  </fieldset>
 );
 
 export default Footer;
+
