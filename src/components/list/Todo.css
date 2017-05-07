@@ -16,7 +16,7 @@
   box-sizing: border-box;
   padding: 27px 33px 0 78px;
   /*two lines one grey and one white*/
-  box-shadow: 0 1px 0 0 #e6e6e6, 0 2px 0 0 white;
+  box-shadow: 0 -1px 0 0 white, 0 -2px 0 0 #e6e6e6;
   /*background*/
   background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/box.svg');
   background-repeat: no-repeat;
@@ -27,4 +27,11 @@
   color: #16a085;
   /*background*/
   background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/done.svg')
+}
+
+@media only screen and (min-width: 730px) {
+  [class^="todo-list__item"] {
+    /*two lines one grey and one white*/
+    box-shadow: 0 1px 0 0 #e6e6e6, 0 2px 0 0 white;
+  }
 }

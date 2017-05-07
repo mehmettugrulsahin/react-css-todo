@@ -15,10 +15,14 @@
   font-weight: 700;
 
   box-shadow: 0 0 2px 1px rgba(0,0,0,0.2);
-  border-radius: 3px 3px 0 0;
+  /*top corners are rounded*/
+  border-radius: 0 0 3px 3px;
 
   /*gets rid of the border*/
   border: none;
+
+  /*to get it to the top*/
+  order:-1;
 }
 
 .filters__title, .filter {
@@ -31,5 +35,15 @@
 
 .filters__title {
   float:left;
+}
+
+@media only screen and (min-width: 730px) {
+  .filters {
+    /*bottom corners are rounded*/
+    border-radius: 3px 3px 0 0;
+
+    /*to get it to the bottom*/
+    order: 0;
+  }
 }
 

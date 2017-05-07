@@ -29,9 +29,22 @@ body {
   position: relative;
   margin: 0 auto;
 
-  /*to make everything to go to the bottom*/
+  /*to make everything to go to the top*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+}
+
+/*
+media query strategy mobile first
+base styles before the media query comes into play
+should be mobile friendly
+*/
+@media only screen and (min-width: 730px) {
+  .container {
+    max-width: 720px;
+    /*to make everything to go to the bottom*/
+    justify-content: flex-end;
+  }
 }
